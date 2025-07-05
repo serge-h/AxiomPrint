@@ -1,0 +1,5 @@
+@for $i from 1 through $grid-columns {
+  .col-md-#{$i} {
+    @include col($i);
+  }
+}

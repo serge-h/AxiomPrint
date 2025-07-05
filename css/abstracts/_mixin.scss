@@ -1,0 +1,40 @@
+@mixin col($span) {
+  flex: 0 0 percentage($span / $grid-columns);
+  max-width: percentage($span / $grid-columns);
+  padding-left: ($grid-gutter / 2);
+  padding-right: ($grid-gutter / 2);
+}
+
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    @include col($i);
+  }
+}
+
+@each $key, $value in $space-scale {
+  @each $abbr, $side in $sides {
+
+    // Margin
+    .m#{$abbr}-#{$key} {
+      @if type-of($side) == "list" {
+        @each $s in $side {
+          margin-#{$s}: $value;
+        }
+      } @else {
+        margin-#{$side}: $value;
+      }
+    }
+
+    // Padding
+    .p#{$abbr}-#{$key} {
+      @if type-of($side) == "list" {
+        @each $s in $side {
+          padding-#{$s}: $value;
+        }
+      } @else {
+        padding-#{$side}: $value;
+      }
+    }
+  }
+}

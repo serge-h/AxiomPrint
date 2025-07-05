@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+html {
+  font-size: $fz;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $ff;
+  background: $white;
+  color: $text_cl;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.container {
+  max-width: $container-max-width;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  padding-left: $grid-gutter;
+  padding-right: $grid-gutter;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline-start: -($grid-gutter / 2);
+  margin-inline-end: -($grid-gutter / 2);
+}
+
+
